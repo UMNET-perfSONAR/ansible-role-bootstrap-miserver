@@ -1,0 +1,5 @@
+---
+# defaults file template
+
+# group vars
+bootstrap_users: []

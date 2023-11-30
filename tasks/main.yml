@@ -1,0 +1,16 @@
+---
+# tasks file for ansible-role-bastion
+
+- name: add users
+#  ansible.builtin.debug: 
+#    msg: miserver adduser "{{ item }}"
+  ansible.builtin.command: /usr/sbin/luseradd "{{ item }}"
+  loop: "{{ miserver_users }}"
+  ignore_errors: true
+
+- name: remove users
+#  ansible.builtin.debug: 
+#    msg: miserver adduser "{{ item }}"
+  ansible.builtin.command: /usr/sbin/luserdel "{{ item }}"
+  loop: "{{ miserver_remove_users }}"
+  ignore_errors: true
